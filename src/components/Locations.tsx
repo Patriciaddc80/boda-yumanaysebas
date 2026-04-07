@@ -20,7 +20,7 @@ function PlaceCard({
           className="card__illustration"
           src="/img/copas-300x300.webp"
           srcSet="/img/copas-300x300.webp 300w, /img/copas-768x768.webp 768w"
-          sizes="(min-width: 768px) 132px, 90px"
+          sizes="(max-width: 479px) 26vw, (max-width: 767px) 20vw, (max-width: 1023px) 15vw, 11rem"
           alt="Celebración"
           width={768}
           height={768}

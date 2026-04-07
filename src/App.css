@@ -29,8 +29,8 @@
   --gold: #c4a574;
   --text: #1a221a;
   --muted: rgba(26, 34, 26, 0.65);
-  /* Mobile: retrato; desktop: cuadrado (ver media query) */
-  --hero-bg-image: url("/img/bg-olive2.png");
+  /* Por defecto (<1024px): retrato móvil; en desktop ver media query */
+  --hero-bg-image: url("/img/bg-olive2.jpg");
   /* Titulares y números grandes: Palisade; Playfair como respaldo */
   --font-display: "Palisade", "Playfair Display", Georgia, serif;
   --font-sans: "Montserrat", system-ui, sans-serif;
@@ -53,11 +53,30 @@ body {
   background-color: #f5f5f6;
   background-image: var(--hero-bg-image);
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  background-attachment: fixed;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Pantallas pequeñas y tablet vertical (<1024px): fondo retrato */
+@media (max-width: 1023px) {
+  :root {
+    --hero-bg-image: url("/img/bg-olive2.jpg");
+  }
+
+  html {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #fff;
+    /* Cubre todo el viewport, sin bandas; fijo al hacer scroll */
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }
 
 .app {
@@ -466,8 +485,9 @@ body {
 
 .card__illustration {
   display: block;
-  width: 90px;
-  height: 90px;
+  width: clamp(4.75rem, 26vw, 6.875rem);
+  height: auto;
+  aspect-ratio: 1;
   margin: 0 auto 1rem;
   object-fit: contain;
 }
@@ -693,26 +713,38 @@ code {
   border-radius: 4px;
 }
 
+@media (min-width: 480px) {
+  .card__illustration {
+    width: clamp(5.5rem, 20vw, 8rem);
+  }
+}
+
 @media (min-width: 768px) {
+  .card__illustration {
+    width: clamp(6.25rem, 15vw, 10rem);
+  }
+}
+
+/* Pantallas grandes: fondo apaisado + flujo invitación larga */
+@media (min-width: 1024px) {
   :root {
-    --hero-bg-image: url("/img/bg-olive.png");
+    --hero-bg-image: url("/img/bg-olive.jpg");
   }
 
-  /* Fondo cuadrado: encuadre completo (ramas en esquinas) sin recorte agresivo en panorámico */
   body {
-    background-position: center center;
-    background-size: min(100vw, 100vh);
+    background-color: #fff;
+    background-image: url("/img/bg-olive.jpg");
+    background-repeat: no-repeat;
+    /* Apaisado: ancho completo, alto según ratio del JPG */
+    background-position: center top;
+    background-size: 100% auto;
     background-attachment: scroll;
   }
 
   .card__illustration {
-    width: 132px;
-    height: 132px;
+    width: clamp(7rem, 11vw, 11rem);
   }
-}
 
-/* Desktop: flujo tipo invitación larga — hero a todo el ancho, resto en columna centrada */
-@media (min-width: 1024px) {
   .section__heading,
   .transport__title,
   .hero__count-lbl {
