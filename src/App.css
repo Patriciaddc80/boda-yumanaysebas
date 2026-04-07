@@ -1,7 +1,7 @@
 /* Palisade: mismo archivo para cuerpo fino (100) y títulos (600); si el .otf es un solo corte, el 100 es el trazo nativo y 600 puede sintetizarse. */
 @font-face {
   font-family: "Palisade";
-  src: url("@font/Palisade.otf") format("opentype");
+  src: url("/font/Palisade.otf") format("opentype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Palisade";
-  src: url("@font/Palisade.otf") format("opentype");
+  src: url("/font/Palisade.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: "Palisade";
-  src: url("@font/Palisade.otf") format("opentype");
+  src: url("/font/Palisade.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -29,7 +29,8 @@
   --gold: #c4a574;
   --text: #1a221a;
   --muted: rgba(26, 34, 26, 0.65);
-  --hero-bg-image: url("/img/bg-olive.png");
+  /* Mobile: retrato; desktop: cuadrado (ver media query) */
+  --hero-bg-image: url("/img/bg-olive2.png");
   /* Titulares y números grandes: Palisade; Playfair como respaldo */
   --font-display: "Palisade", "Playfair Display", Georgia, serif;
   --font-sans: "Montserrat", system-ui, sans-serif;
@@ -171,13 +172,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: clamp(2.25rem, 8vh, 4.5rem);
-}
-
-.hero__count-icon {
-  display: block;
-  width: clamp(65px, 16vw, 90px);
-  height: auto;
-  margin: 0 auto 0.85rem;
 }
 
 .hero__count-lbl {
@@ -697,6 +691,24 @@ code {
   background: rgba(44, 58, 44, 0.08);
   padding: 0.1em 0.35em;
   border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --hero-bg-image: url("/img/bg-olive.png");
+  }
+
+  /* Fondo cuadrado: encuadre completo (ramas en esquinas) sin recorte agresivo en panorámico */
+  body {
+    background-position: center center;
+    background-size: min(100vw, 100vh);
+    background-attachment: scroll;
+  }
+
+  .card__illustration {
+    width: 132px;
+    height: 132px;
+  }
 }
 
 /* Desktop: flujo tipo invitación larga — hero a todo el ancho, resto en columna centrada */

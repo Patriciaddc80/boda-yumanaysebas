@@ -18,10 +18,12 @@ function PlaceCard({
       {place.title === "Celebración" && (
         <img
           className="card__illustration"
-          src="/copas-fiesta-1.gif"
+          src="/img/copas-300x300.webp"
+          srcSet="/img/copas-300x300.webp 300w, /img/copas-768x768.webp 768w"
+          sizes="(min-width: 768px) 132px, 90px"
           alt="Celebración"
-          width={90}
-          height={90}
+          width={768}
+          height={768}
           loading="lazy"
         />
       )}

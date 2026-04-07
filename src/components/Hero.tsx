@@ -20,13 +20,6 @@ export function Hero({ brideName, groomName, eventDateIso }: HeroProps) {
           </span>
         </h1>
         <div className="hero__count">
-          <img
-            className="hero__count-icon"
-            src="/iglesia-1.gif"
-            alt=""
-            width={90}
-            height={90}
-          />
           <h2 className="hero__count-lbl">Falta poco para nuestra boda</h2>
           <p className="hero__count-subtext">
             Nos gustaría que nos acompañaseis en este día tan especial
