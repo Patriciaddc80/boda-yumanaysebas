@@ -50,7 +50,7 @@ function dateLocalIso(
 
 export const invitation: InvitationData = {
   brideName: "Yumana",
-  groomName: "(pareja)",
+  groomName: "Sebas",
   eventDate: dateLocalIso(2026, 9, 12, 0, 0),
   welcome:
     "Con el corazón lleno de ilusión, queremos compartir contigo uno de los días más importantes de nuestra historia.",
