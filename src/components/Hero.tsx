@@ -1,12 +1,16 @@
 import { Countdown } from "./Countdown";
 
 export interface HeroProps {
-  brideName: string;
-  groomName: string;
-  eventDateIso: string;
+  readonly brideName: string;
+  readonly groomName: string;
+  readonly eventDateIso: string;
 }
 
-export function Hero({ brideName: _brideName, groomName: _groomName, eventDateIso }: HeroProps) {
+export function Hero({
+  brideName: _brideName,
+  groomName: _groomName,
+  eventDateIso,
+}: HeroProps) {
   return (
     <header className="hero">
       <div className="hero__inner">
