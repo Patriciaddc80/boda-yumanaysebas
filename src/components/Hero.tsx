@@ -13,7 +13,7 @@ export function Hero({ brideName: _brideName, groomName: _groomName, eventDateIs
         <h1 className="hero__title">
           <img
             className="hero__logo"
-            src="/img/yumana-logo.gif"
+            src="/img/yumana-logotipo.svg"
             alt="Yumana y Sebas"
             width={1024}
             height={1024}
