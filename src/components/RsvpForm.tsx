@@ -29,7 +29,10 @@ export function RsvpForm() {
     <section className="section section--hero-bg" id="rsvp">
       <div className="section__inner section__inner--narrow">
         <h2 className="section__heading">Confirmar asistencia</h2>
-        <p className="section__lead">Formulario sencillo; más adelante lo conectamos a Prisma o a un backend.</p>
+        <p className="section__lead">
+          Estamos muy ilusionados de poder contar contigo, por favor confirmanos
+          tu presencia.
+        </p>
         <form className="form" onSubmit={onSubmit}>
           <label className="form__label">
             Nombre completo
@@ -91,7 +94,12 @@ export function RsvpForm() {
           </fieldset>
           <label className="form__label">
             Alergias (opcional)
-            <textarea className="form__input form__textarea" value={allergies} onChange={(ev) => setAllergies(ev.target.value)} rows={2} />
+            <textarea
+              className="form__input form__textarea"
+              value={allergies}
+              onChange={(ev) => setAllergies(ev.target.value)}
+              rows={2}
+            />
           </label>
           <button type="submit" className="btn btn--block">
             Enviar

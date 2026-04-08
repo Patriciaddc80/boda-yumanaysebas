@@ -20,12 +20,11 @@ export function Hero({ brideName, groomName, eventDateIso }: HeroProps) {
           </span>
         </h1>
         <div className="hero__count">
-          <h2 className="hero__count-lbl">Falta poco para nuestra boda</h2>
           <p className="hero__count-subtext">
             Nos gustaría que nos acompañaseis en este día tan especial
           </p>
-          <Countdown targetIso={eventDateIso} />
         </div>
+        <Countdown targetIso={eventDateIso} />
       </div>
     </header>
   );

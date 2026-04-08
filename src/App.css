@@ -29,8 +29,11 @@
   --gold: #c4a574;
   --text: #1a221a;
   --muted: rgba(26, 34, 26, 0.65);
-  /* Por defecto (<1024px): retrato móvil; en desktop ver media query */
+  /* Fondo (por defecto: retrato para móvil/tablet) */
   --hero-bg-image: url("/img/bg-olive2.jpg");
+  --hero-bg-position: center 22%;
+  --hero-bg-size: cover;
+  --hero-bg-attachment: fixed;
   /* Titulares y números grandes: Palisade; Playfair como respaldo */
   --font-display: "Palisade", "Playfair Display", Georgia, serif;
   --font-sans: "Montserrat", system-ui, sans-serif;
@@ -53,6 +56,9 @@ body {
   background-color: #f5f5f6;
   background-image: var(--hero-bg-image);
   background-repeat: no-repeat;
+  background-size: var(--hero-bg-size);
+  background-position: var(--hero-bg-position);
+  background-attachment: var(--hero-bg-attachment);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
@@ -61,6 +67,9 @@ body {
 @media (max-width: 1023px) {
   :root {
     --hero-bg-image: url("/img/bg-olive2.jpg");
+    --hero-bg-size: cover;
+    --hero-bg-position: center 22%;
+    --hero-bg-attachment: fixed;
   }
 
   html {
@@ -72,11 +81,56 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     background-color: #fff;
-    /* Cubre todo el viewport, sin bandas; fijo al hacer scroll */
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+    background-image: url("/img/bg-olive2.jpg");
   }
+}
+
+/* Móvil: encuadre consistente del retrato sin deformar */
+@media (max-width: 765px) {
+  html {
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
+
+  body {
+    min-height: 100svh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+    background-color: #fff;
+    /* En móvil pequeño, forzamos el retrato para evitar herencias inesperadas */
+    background-image: url("/img/bg-olive2.jpg");
+    /* Mantener el marco completo (sin recorte), pero más grande */
+    background-size: calc(132% + 2px) auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 50;
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(245, 240, 232, 0.92);
+  color: var(--forest);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 25px rgba(26, 34, 26, 0.18);
+  transform: translateY(-200%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid rgba(196, 165, 116, 0.7);
+  outline-offset: 3px;
+}
+
+.main:focus {
+  outline: none;
 }
 
 .app {
@@ -124,7 +178,7 @@ body {
   margin: 0 0 0.85rem;
   max-width: 22rem;
   font-family: var(--font-sans);
-  font-weight: 200;
+  font-weight: 500;
   font-size: clamp(0.68rem, 2.35vw, 0.8125rem);
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -364,6 +418,22 @@ body {
   color: rgba(245, 240, 232, 0.7);
 }
 
+.meta-highlight {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.94);
+  background: rgba(196, 165, 116, 0.14);
+  border: 1px solid rgba(196, 165, 116, 0.28);
+  box-shadow: 0 10px 22px rgba(26, 34, 26, 0.16);
+}
+
 .section--cream .section__meta {
   color: var(--muted);
 }
@@ -487,7 +557,7 @@ body {
 
 .card__illustration {
   display: block;
-  width: clamp(4.75rem, 26vw, 6.875rem);
+  width: clamp(3.75rem, 18vw, 5.25rem);
   height: auto;
   aspect-ratio: 1;
   margin: 0 auto 1rem;
@@ -527,6 +597,17 @@ body {
 .card .btn {
   margin-left: auto;
   margin-right: auto;
+}
+
+.section__illustration {
+  display: block;
+  width: clamp(4.25rem, 16vw, 6.25rem);
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 auto 1rem;
+  opacity: 0.92;
+  filter: drop-shadow(0 14px 22px rgba(26, 34, 26, 0.14));
+  object-fit: contain;
 }
 
 .btn--block {
@@ -717,34 +798,26 @@ code {
 
 @media (min-width: 480px) {
   .card__illustration {
-    width: clamp(5.5rem, 20vw, 8rem);
+    width: clamp(4.25rem, 12vw, 5.75rem);
   }
 }
 
 @media (min-width: 768px) {
   .card__illustration {
-    width: clamp(6.25rem, 15vw, 10rem);
+    width: clamp(4.75rem, 9vw, 6.25rem);
   }
 }
 
 /* Pantallas grandes: fondo apaisado + flujo invitación larga */
 @media (min-width: 1024px) {
-  :root {
-    --hero-bg-image: url("/img/bg-olive.jpg");
-  }
-
   body {
     background-color: #fff;
-    background-image: url("/img/bg-olive.jpg");
-    background-repeat: no-repeat;
-    /* Apaisado: ancho completo, alto según ratio del JPG */
-    background-position: center top;
-    background-size: 100% auto;
-    background-attachment: scroll;
+    /* Unificamos fondo: también en desktop usamos el retrato */
+    background-image: url("/img/bg-olive2.jpg");
   }
 
   .card__illustration {
-    width: clamp(7rem, 11vw, 11rem);
+    width: clamp(5rem, 6vw, 6.75rem);
   }
 
   .section__heading,

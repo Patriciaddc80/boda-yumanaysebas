@@ -15,19 +15,27 @@ function PlaceCard({
 }) {
   return (
     <article className={`card${transparent ? " card--transparent" : ""}`}>
+      {place.title === "Ceremonia" && (
+        <img
+          className="card__illustration"
+          src="/img/iglesia.webp"
+          alt="Ceremonia"
+          width={768}
+          height={768}
+          loading="lazy"
+        />
+      )}
       {place.title === "Celebración" && (
         <img
           className="card__illustration"
-          src="/img/copas-300x300.webp"
-          srcSet="/img/copas-300x300.webp 300w, /img/copas-768x768.webp 768w"
-          sizes="(max-width: 479px) 26vw, (max-width: 767px) 20vw, (max-width: 1023px) 15vw, 11rem"
+          src="/img/copas-fiesta-1.gif"
           alt="Celebración"
           width={768}
           height={768}
           loading="lazy"
         />
       )}
-      <h2 className="card__title">{place.title}</h2>
+      <h3 className="card__title">{place.title}</h3>
       <p className="card__time">{place.time}</p>
       <p className="card__venue">{place.venue}</p>
       <p className="card__addr">{place.address}</p>
@@ -46,12 +54,12 @@ function PlaceCard({
 function TransportBlock({ transport }: { transport: TransportInfo }) {
   return (
     <div className="transport">
-      <h2 className="transport__title">Servicio de transporte</h2>
+      <h3 className="transport__title">Transporte</h3>
       <div className="transport__grid">
         <div className="transport__leg">
           <h4 className="transport__leg-label">Ida</h4>
           <p className="transport__dep">
-            Salida desde {transport.ida.departureFrom}
+            Salida hacia la boda {transport.ida.departureFrom}
           </p>
           <a
             className="btn"
@@ -65,7 +73,7 @@ function TransportBlock({ transport }: { transport: TransportInfo }) {
         <div className="transport__leg">
           <h4 className="transport__leg-label">Vuelta</h4>
           <p className="transport__dep">
-            Salida desde {transport.vuelta.departureFrom}
+            Salida desde la boda {transport.vuelta.departureFrom}
           </p>
           <a
             className="btn"
