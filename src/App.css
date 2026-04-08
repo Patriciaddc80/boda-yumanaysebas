@@ -99,22 +99,22 @@ body {
     background-color: #fff;
     /* En móvil pequeño, forzamos el retrato para evitar herencias inesperadas */
     background-image: url("/img/bg-olive2.jpg");
-    /* Llenar toda la pantalla en móvil */
-    background-size: cover;
+    /* En móvil: mantener composición tipo marco floral */
+    background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
   }
 
   .hero {
     background-image: url("/img/bg-olive2.jpg");
-    background-size: cover;
-    background-position: center center;
+    background-size: 100% auto;
+    background-position: center top;
     background-repeat: no-repeat;
   }
 
   .hero__logo {
-    width: min(55rem, 120vw);
-    transform: translateY(-2rem);
+    width: min(34rem, 84vw);
+    transform: translateY(-0.35rem);
     display: block;
     margin-left: auto;
     margin-right: auto;
