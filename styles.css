@@ -171,6 +171,7 @@ body::before {
   line-height: 1.25;
   text-transform: uppercase;
   color: rgba(44, 58, 44, 0.88);
+  margin-top: -23%;
 }
 
 .hero__tagline-line {
@@ -188,7 +189,7 @@ body::before {
 
 .hero__count-subtext {
   margin: -1.65rem 0 0.55rem;
-  font-size: clamp(1.02rem, 3.4vw, 1.125rem);
+  font-size: 14px;
   line-height: 1.45;
   color: rgba(44, 58, 44, 0.78);
   text-align: center;
@@ -203,12 +204,15 @@ body::before {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.35rem;
+  font-weight: 700;
 }
 
 .countdown__cell {
   position: relative;
   text-align: center;
   padding: 0.25rem 0.45rem;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
 }
 
 .countdown__cell:not(:nth-child(4n + 1))::before {
