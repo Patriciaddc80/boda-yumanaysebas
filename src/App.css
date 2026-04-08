@@ -104,6 +104,14 @@ body {
     background-position: center top;
     background-repeat: no-repeat;
   }
+
+  .hero__logo {
+    width: min(52rem, 118vw);
+    transform: translateY(-2.6rem);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .skip-link {
@@ -140,7 +148,11 @@ body {
 /* Hero */
 .hero {
   min-height: 100dvh;
-  background: transparent;
+  background-color: #fff;
+  background-image: url("/img/bg-olive2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
   color: #2c3a2c;
   position: relative;
   overflow: hidden;
@@ -191,6 +203,7 @@ body {
   line-height: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero__logo {
@@ -256,7 +269,7 @@ body {
   max-width: 28rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: clamp(2.25rem, 8vh, 4.5rem);
+  margin-top: 0;
 }
 
 .hero__count-lbl {

@@ -24,7 +24,7 @@ export function Welcome({
     <section className="section section--dark">
       <div className="section__inner section__inner--narrow">
         <h2 className="section__heading section__heading--gold">
-          Nos gustaria{" "}
+          Nos gustaría que nos acompañaseis en este día tan especial
         </h2>
         <p className="section__text">{message}</p>
         <p className="section__meta">
