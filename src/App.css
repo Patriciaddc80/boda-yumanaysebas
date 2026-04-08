@@ -106,10 +106,7 @@ body {
   }
 
   .hero {
-    background-image: url("/img/bg-olive2.jpg");
-    background-size: 100% auto;
-    background-position: center top;
-    background-repeat: no-repeat;
+    background: transparent;
   }
 
   .hero__inner {
@@ -130,6 +127,13 @@ body {
 
   .hero__count {
     margin-top: 0;
+  }
+}
+
+/* Móviles muy pequeños (300px aprox): asegurar fondo visible en todo el header */
+@media (max-width: 360px) {
+  .hero {
+    background: transparent;
   }
 }
 
@@ -167,11 +171,7 @@ body {
 /* Hero */
 .hero {
   min-height: 100dvh;
-  background-color: #fff;
-  background-image: url("/img/bg-olive2.jpg");
-  background-repeat: no-repeat;
-  background-size: 112% auto;
-  background-position: center top;
+  background: transparent;
   color: #2c3a2c;
   position: relative;
   overflow: hidden;
