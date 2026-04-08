@@ -107,8 +107,8 @@ body {
 
   .hero {
     background-image: url("/img/bg-olive2.jpg");
-    background-size: 120% auto;
-    background-position: center top;
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
   }
 
@@ -215,7 +215,7 @@ body {
 
 .hero__logo {
   display: block;
-  width: min(82rem, 178vw);
+  width: min(88rem, 190vw);
   max-width: none;
   height: auto;
   margin: 0;
