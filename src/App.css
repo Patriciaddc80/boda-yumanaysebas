@@ -109,8 +109,10 @@ body {
     background-color: #fff;
     background-image: url("/ramita-olivo.svg");
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
+    min-height: 100svh;
+    min-height: 100dvh;
   }
 
   .hero__inner {
@@ -140,8 +142,27 @@ body {
     background-color: #fff;
     background-image: url("/ramita-olivo.svg");
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
+}
+
+/* iPhone 16 (aprox 393x852): fijar encuadre y espacios */
+@media (min-width: 390px) and (max-width: 430px) and (min-height: 820px) {
+  .hero {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .hero__inner {
+    padding-top: max(1.25rem, env(safe-area-inset-top));
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+
+  .hero__logo {
+    width: min(21rem, 60vw);
   }
 }
 
