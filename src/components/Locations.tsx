@@ -58,9 +58,7 @@ function TransportBlock({ transport }: { transport: TransportInfo }) {
       <div className="transport__grid">
         <div className="transport__leg">
           <h4 className="transport__leg-label">Ida</h4>
-          <p className="transport__dep">
-            Salida hacia la boda {transport.ida.departureFrom}
-          </p>
+          <p className="transport__dep">Llegada hacia la boda</p>
           <a
             className="btn"
             href={transport.ida.mapsUrl}
@@ -72,9 +70,7 @@ function TransportBlock({ transport }: { transport: TransportInfo }) {
         </div>
         <div className="transport__leg">
           <h4 className="transport__leg-label">Vuelta</h4>
-          <p className="transport__dep">
-            Salida desde la boda {transport.vuelta.departureFrom}
-          </p>
+          <p className="transport__dep">Salida desde la boda</p>
           <a
             className="btn"
             href={transport.vuelta.mapsUrl}
@@ -95,7 +91,7 @@ export function Locations({ ceremony, reception, transport }: LocationsProps) {
       <div className="section__inner">
         <h2 className="section__heading">Ubicación</h2>
         <p className="section__lead">
-          Enlaces a Google Maps (aqui la url del mapa).
+          Calle Vega s/n 13740 Torrenueva (Ciudad Real).
         </p>
         <div className="grid-2">
           <PlaceCard place={ceremony} />

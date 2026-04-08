@@ -79,5 +79,5 @@ export const invitation: InvitationData = {
     },
   },
   dressCode:
-    "Evtar color (......). Tonos neutros y verdes apagados muy bienvenidos.",
+    "Evtar color blanco y negro, Tonos neutros o verdes apagados serán bienvenidos.",
 };

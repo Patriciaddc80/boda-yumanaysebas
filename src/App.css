@@ -99,8 +99,15 @@ body {
     background-color: #fff;
     /* En móvil pequeño, forzamos el retrato para evitar herencias inesperadas */
     background-image: url("/img/bg-olive2.jpg");
-    /* Mantener el marco completo (sin recorte), pero más grande */
-    background-size: calc(132% + 2px) auto;
+    /* Llenar toda la pantalla en móvil */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .hero {
+    background-image: url("/img/bg-olive2.jpg");
+    background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
   }
