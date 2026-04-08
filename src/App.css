@@ -188,9 +188,19 @@ body {
 .hero__title {
   margin: 0;
   width: 100%;
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 14vw, 7.25rem);
-  line-height: 1.05;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__logo {
+  display: block;
+  width: min(64rem, 140vw);
+  max-width: none;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+  transform: translateY(-1.8rem);
 }
 
 .hero__name-main {
@@ -827,7 +837,7 @@ code {
   }
 
   .hero__inner {
-    max-width: 38rem;
+    max-width: 64rem;
     padding-top: 3rem;
     padding-bottom: 3.5rem;
   }

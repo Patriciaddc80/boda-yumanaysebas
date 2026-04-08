@@ -6,18 +6,19 @@ export interface HeroProps {
   eventDateIso: string;
 }
 
-export function Hero({ brideName, groomName, eventDateIso }: HeroProps) {
+export function Hero({ brideName: _brideName, groomName: _groomName, eventDateIso }: HeroProps) {
   return (
     <header className="hero">
       <div className="hero__inner">
-        <p className="hero__subtitle">
-          Queremos comenzar esta aventura contigo.
-        </p>
         <h1 className="hero__title">
-          <span className="hero__name-main">{brideName}</span>{" "}
-          <span className="hero__name-fine">
-            <span className="hero__amp">y</span> {groomName}
-          </span>
+          <img
+            className="hero__logo"
+            src="/img/yumana-logo.gif"
+            alt="Yumana y Sebas"
+            width={1024}
+            height={1024}
+            loading="eager"
+          />
         </h1>
         <div className="hero__count">
           <p className="hero__count-subtext">
