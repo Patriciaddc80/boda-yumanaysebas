@@ -106,7 +106,11 @@ body {
   }
 
   .hero {
-    background: transparent;
+    background-color: #fff;
+    background-image: url("/ramita-olivo.svg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 
   .hero__inner {
@@ -133,7 +137,11 @@ body {
 /* Móviles muy pequeños (300px aprox): asegurar fondo visible en todo el header */
 @media (max-width: 360px) {
   .hero {
-    background: transparent;
+    background-color: #fff;
+    background-image: url("/ramita-olivo.svg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 }
 
